@@ -1,0 +1,7 @@
+.Date,
+.Title,
+.Amount{
+  background:black;
+  color:white;
+  padding-left:10px;
+}
