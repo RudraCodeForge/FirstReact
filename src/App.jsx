@@ -7,7 +7,7 @@ export default function App() {
        id:"0", 
        date:"2024-12-23", 
        title:"Yearly Subscription", 
-       amount:"2500"
+       amount:"2500.00"
      }, 
      
      {
@@ -27,7 +27,9 @@ export default function App() {
    ]
   return (
     <main>
+      <Subscription passedDate={subscription[0].date} passedTitle={subscription[0].title} passedAmount={subscription[0].amount}/>
       <Subscription passedDate={subscription[1].date} passedTitle={subscription[1].title} passedAmount={subscription[1].amount}/>
+      <Subscription passedDate={subscription[2].date} passedTitle={subscription[2].title} passedAmount={subscription[2].amount}/>
     </main>
   );
 }
