@@ -1,4 +1,5 @@
 import './Date.css';
+import Container from '../Templates/Container.jsx';
 const DATE=(props)=>
 {
   const date = new Date(props.PassedDate);
@@ -7,11 +8,11 @@ const DATE=(props)=>
   const year=date.getFullYear();
 
   return(
-    <div className="Date">
+    <Container className="Date">
       <div>{month}</div>
       <div>{day}</div>
       <div>{year}</div>
-    </div>
+    </Container>
   );
 }
 export default DATE;

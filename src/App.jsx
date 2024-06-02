@@ -1,5 +1,7 @@
 import './App.css'
-import Subscription from './components/Subscription';
+
+import Subscription from './subscription/Subscription';
+import Container from './Templates/Container';
 
 export default function App() {
    let subscription=[
@@ -26,10 +28,10 @@ export default function App() {
 
    ]
   return (
-    <main>
+    <Container>
       <Subscription passedDate={subscription[0].date} passedTitle={subscription[0].title} passedAmount={subscription[0].amount}/>
       <Subscription passedDate={subscription[1].date} passedTitle={subscription[1].title} passedAmount={subscription[1].amount}/>
       <Subscription passedDate={subscription[2].date} passedTitle={subscription[2].title} passedAmount={subscription[2].amount}/>
-    </main>
+    </Container>
   );
 }
