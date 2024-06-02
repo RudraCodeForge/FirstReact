@@ -1,6 +1,6 @@
 import "./Subscription.css";
 
-import DATE from './Date';
+import DATE from './SubscriptionDate';
 
 import Container from '../Templates/Container.jsx';
 
