@@ -2,7 +2,6 @@ import "./SForm.css";
 import { useState } from "react";
 
 const SForm = () => {
-
   const [form, setForm] = useState({
     UserTitle: "",
     UserDate: "",
@@ -10,17 +9,23 @@ const SForm = () => {
   });
 
   const TitleChange = (event) => {
-    setForm({ ...form, UserTitle: event.target.value });
+    setForm((prevState) => {
+      return { ...prevState, UserTitle: event.target.value };
+    });
     console.log(form.UserTitle);
   };
 
   const DateChange = (event) => {
-    setForm({ ...form, UserDate: event.target.value });
+    setForm((prevState) => {
+      return { ...prevState, UserDate: event.target.value };
+    });
     console.log(form.UserDate);
   };
 
   const AmountChange = (event) => {
-    setForm({ ...form, UserAmount: event.target.value });
+    setForm((prevState) => {
+      return { ...prevState, UserAmount: event.target.value };
+    });
     console.log(form.UserAmount);
   };
   return (
