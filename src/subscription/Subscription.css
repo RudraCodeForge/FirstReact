@@ -29,3 +29,10 @@
     
   border-radius: 12px;
 }
+.Ctitle{
+  font-size:5px;
+  font-weight:bold;
+  padding:3px;
+  background:transparent;
+  margin:5px; 
+}

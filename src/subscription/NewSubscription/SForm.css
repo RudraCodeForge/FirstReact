@@ -1,0 +1,65 @@
+.New_Sub_Controls{
+  text-align:center;
+  border:2px solid black;
+  border-radius:20px;
+  margin:20px;
+  padding:5px;
+  background-color: rgb(5, 6, 45);
+}
+.Hadding{
+  color:white;
+}
+input{
+  padding:10px;
+  width:70%;
+  color:white;
+  margin-top:5px;
+  font-weight: bold;
+  border:2px solid white;
+  border-radius:20px;
+  background:none;
+}
+ .FSumbit{
+ background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+ border: 0;
+ border-radius: 8px;
+ box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+ box-sizing: border-box;
+ color: #FFFFFF;
+ /*display: flex;*/
+ font-family: Phantomsans, sans-serif;
+ font-size: 18px;
+ justify-content: center;
+ margin:10px;
+ width: 70%;
+ padding: 10px;
+ text-decoration: none;
+ user-select: none;
+ -webkit-user-select: none;
+ touch-action: manipulation;
+ white-space: nowrap;
+ cursor: pointer;
+ transition: all .3s;
+}
+
+.FSumbit:active,
+.FSumbit:hover {
+ outline: 0;
+}
+
+.FSumbit span {
+ background-color: rgb(5, 6, 45);
+ padding: 16px 24px;
+ border-radius: 6px;
+ width: 100%;
+ height: 100%;
+ transition: 300ms;
+}
+
+.FSumbit:hover span {
+ background: none;
+}
+
+.FSumbit:active {
+ transform: scale(0.9);
+}
