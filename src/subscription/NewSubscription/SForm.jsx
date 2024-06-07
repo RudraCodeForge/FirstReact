@@ -8,28 +8,34 @@ const SForm = () => {
     UserAmount: "",
   });
 
-  const TitleChange = (event) => {
+  const TitleChange = (events) => {
     setForm((prevState) => {
-      return { ...prevState, UserTitle: event.target.value };
+      return { ...prevState, UserTitle: events.target.value };
     });
     console.log(form.UserTitle);
   };
 
-  const DateChange = (event) => {
+  const DateChange = (events) => {
     setForm((prevState) => {
-      return { ...prevState, UserDate: event.target.value };
+      return { ...prevState, UserDate: events.target.value };
     });
     console.log(form.UserDate);
   };
 
-  const AmountChange = (event) => {
+  const AmountChange = (events) => {
     setForm((prevState) => {
-      return { ...prevState, UserAmount: event.target.value };
+      return { ...prevState, UserAmount: events.target.value };
     });
     console.log(form.UserAmount);
   };
+  const SumbitHandler=(events)=>{
+    return(
+      events.preventDefault()
+    );
+  }
+  
   return (
-    <form>
+    <form onSubmit={SumbitHandler}>
       <div className="New_Sub_Controls">
         <div className="New_Sub_Control">
           <h2 className="Hadding">ADD NEW SUBSCRIPTION</h2>
@@ -60,7 +66,7 @@ const SForm = () => {
         <div className="Action">
           <span>
             <button type="Submit" className="FSumbit">
-              Add Subscription
+              ADD SUBSCRIPTION
             </button>
           </span>
         </div>
