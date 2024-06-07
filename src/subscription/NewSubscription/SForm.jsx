@@ -12,30 +12,35 @@ const SForm = () => {
     setForm((prevState) => {
       return { ...prevState, UserTitle: events.target.value };
     });
-    console.log(form.UserTitle);
   };
 
   const DateChange = (events) => {
     setForm((prevState) => {
       return { ...prevState, UserDate: events.target.value };
     });
-    console.log(form.UserDate);
   };
 
   const AmountChange = (events) => {
     setForm((prevState) => {
       return { ...prevState, UserAmount: events.target.value };
     });
-    console.log(form.UserAmount);
   };
-  const SumbitHandler=(events)=>{
-    return(
-      events.preventDefault()
-    );
-  }
+  
+  const SubmitHandler = (event) => 
+  {
+    event.preventDefault();
+    console.log("Form submitted");
+    const subscription={
+      id:Math.random(), 
+      title:form.UserTitle,
+      date:form.UserDate, 
+      amount:form.UserAmount
+    };
+    console.log(subscription);
+  };
   
   return (
-    <form onSubmit={SumbitHandler}>
+    <form onSubmit={SubmitHandler}>
       <div className="New_Sub_Controls">
         <div className="New_Sub_Control">
           <h2 className="Hadding">ADD NEW SUBSCRIPTION</h2>
