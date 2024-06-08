@@ -1,0 +1,17 @@
+.Filter{
+  text-align:center;
+  border:2px solid black;
+  border-radius:10px;
+  padding:10px;
+  font-weight:bolder;
+  background-color: rgb(5, 6, 45);
+  color:white;
+}
+select{
+  border:2px solid white;
+  border-radius:20px;
+  padding:3px;
+  font-size:1rem;
+  color:white;
+  background:none;
+}

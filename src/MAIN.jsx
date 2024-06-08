@@ -1,6 +1,6 @@
 import Subscription from './subscription/Subscription';
 import Container from './Templates/Container';
-
+import Filter from './subscription/Filter.jsx';
 import NewSubscription from './subscription/NewSubscription/NewSubscription.jsx'
 
 
@@ -38,6 +38,7 @@ const Main=()=>{
   return(
     <Container>
       <NewSubscription onAddSubbscription={AddSubscription}/>
+      <Filter/>
       <Subscription passedDate={subscription[0].date} passedTitle={subscription[0].title} passedAmount={subscription[0].amount}/>
       <Subscription passedDate={subscription[1].date} passedTitle={subscription[1].title} passedAmount={subscription[1].amount}/>
       <Subscription passedDate={subscription[2].date} passedTitle={subscription[2].title} passedAmount={subscription[2].amount}/>
