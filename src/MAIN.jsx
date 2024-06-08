@@ -28,10 +28,16 @@ const Main=()=>{
      }
 
   ]
+  const AddSubscription=(data)=>
+  {
+    console.log("Data recive in Main.jsx");
+    console.log(data);
+    subscription.push(data);
+  }
   
   return(
     <Container>
-      <NewSubscription/>
+      <NewSubscription onAddSubbscription={AddSubscription}/>
       <Subscription passedDate={subscription[0].date} passedTitle={subscription[0].title} passedAmount={subscription[0].amount}/>
       <Subscription passedDate={subscription[1].date} passedTitle={subscription[1].title} passedAmount={subscription[1].amount}/>
       <Subscription passedDate={subscription[2].date} passedTitle={subscription[2].title} passedAmount={subscription[2].amount}/>

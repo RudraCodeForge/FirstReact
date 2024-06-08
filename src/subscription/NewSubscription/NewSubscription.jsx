@@ -2,10 +2,14 @@ import './NewSubscription.css';
 
 import SForm from './SForm.jsx';
 
-const NewSubscription=()=>{
+const NewSubscription=(props)=>{
+  const onSaveHandler =(data)=>{
+    const SubscriptionData={...data};
+    props.onAddSubbscription(SubscriptionData)
+  };
   return(
     <div>
-      <SForm/>
+      <SForm onSave={onSaveHandler}/>
     </div>
   );
 }

@@ -1,8 +1,9 @@
 import "./SForm.css";
 import { useState } from "react";
 
-const SForm = () => {
+const SForm = (props) => {
   const [form, setForm] = useState({
+    UserId:Math.random().toString(),
     UserTitle: "Subscription type:- ",
     UserDate: "0000-00-00",
     UserAmount: "Enter Amount:-",
@@ -29,14 +30,13 @@ const SForm = () => {
   const SubmitHandler = (event) => 
   {
     event.preventDefault();
-    console.log("Form submitted");
     const subscription={
-      id:Math.random(), 
+      id:form.UserId, 
       title:form.UserTitle,
       date:form.UserDate, 
       amount:form.UserAmount
     };
-    console.log(subscription);
+    props.onSave(subscription);
   };
   
   return (
