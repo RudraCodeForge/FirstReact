@@ -3,9 +3,9 @@ import { useState } from "react";
 
 const SForm = () => {
   const [form, setForm] = useState({
-    UserTitle: "",
-    UserDate: "",
-    UserAmount: "",
+    UserTitle: "Subscription type:- ",
+    UserDate: "0000-00-00",
+    UserAmount: "Enter Amount:-",
   });
 
   const TitleChange = (events) => {
@@ -46,7 +46,7 @@ const SForm = () => {
           <h2 className="Hadding">ADD NEW SUBSCRIPTION</h2>
           <input
             type="text"
-            placeholder="TITLE *"
+            value={form.UserTitle}
             onChange={TitleChange}
             required
           ></input>
@@ -54,7 +54,7 @@ const SForm = () => {
 
           <input
             type="date"
-            placeholder="Date *"
+            value={form.UserDate}
             onChange={DateChange}
             required
           ></input>
@@ -62,7 +62,7 @@ const SForm = () => {
 
           <input
             type="text"
-            placeholder="Amount *"
+            value={form.UserAmount}
             onChange={AmountChange}
             required
           ></input>
