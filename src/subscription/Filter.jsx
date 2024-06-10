@@ -1,13 +1,14 @@
 import "./Filter.css";
-const Filter =()=>{
+const Filter =(props)=>{
   const YearHandler=(events)=>{
     console.log(events.target.value);
+    props.onFilterChange(events.target.value);
   }
   return(
     <div className="Filter">
-      <div className="Filter_Components">
+      <div className="Filter_Controls">
         <label>FILTER BY YEAR </label>
-        <select onChange={YearHandler}>
+        <select value={props.selectedFilter} onChange={YearHandler}>
           <option value="All">All</option>
           <option value="2020">2020</option>
           <option value="2021">2021</option>

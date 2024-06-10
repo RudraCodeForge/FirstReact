@@ -3,7 +3,6 @@ import { useState } from "react";
 
 const SForm = (props) => {
   const [form, setForm] = useState({
-    UserId:Math.floor(Math.random() * (100 - 1 + 1)) + 1,
     UserTitle: "Subscription type:- ",
     UserDate: "0000-00-00",
     UserAmount: "Enter Amount:-",
@@ -30,8 +29,7 @@ const SForm = (props) => {
   const SubmitHandler = (event) => 
   {
     event.preventDefault();
-    const subscription={
-      id:form.UserId.toString(), 
+    const subscription={ 
       title:form.UserTitle,
       date:form.UserDate, 
       amount:form.UserAmount
@@ -46,8 +44,7 @@ const SForm = (props) => {
           <h2 className="Hadding">ADD NEW SUBSCRIPTION</h2>
           <input
             type="text"
-            /*value={form.UserTitle}*/
-            placeholder="ENTER TITLE:-"
+            value={form.UserTitle}
             onChange={TitleChange}
             required
           ></input>
@@ -55,8 +52,7 @@ const SForm = (props) => {
 
           <input
             type="date"
-            /*value={form.UserDate}*/
-            placeholder="ENTER DATE:-"
+            value={form.UserDate}
             onChange={DateChange}
             required
           ></input>
@@ -64,8 +60,7 @@ const SForm = (props) => {
 
           <input
             type="text"
-            /*value={form.UserAmount}*/
-            placeholder="ENTER AMOUNT:-"
+            value={form.UserAmount}
             onChange={AmountChange}
             required
           ></input>

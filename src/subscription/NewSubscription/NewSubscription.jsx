@@ -4,7 +4,7 @@ import SForm from './SForm.jsx';
 
 const NewSubscription=(props)=>{
   const onSaveHandler =(data)=>{
-    const SubscriptionData={...data};
+    const SubscriptionData={...data,id:Math.random().toString()};
     props.onAddSubbscription(SubscriptionData)
   };
   return(

@@ -1,11 +1,17 @@
 .Filter{
-  text-align:center;
   border:2px solid black;
   border-radius:10px;
   padding:10px;
   font-weight:bolder;
   background-color: rgb(5, 6, 45);
   color:white;
+}
+.Filter_Controls {
+  display:flex;
+  justify-content:space-between;
+}
+label{
+  margin-top: 7px;
 }
 select{
   border:2px solid white;
