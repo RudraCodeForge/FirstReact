@@ -8,21 +8,21 @@ import NewSubscription from './subscription/NewSubscription/NewSubscription.jsx'
 const INITIAL_SUBSCRIPTION=[
   {
     id:"0", 
-    date:"2024-12-23", 
+    date:(new Date('2021','03','23')), 
     title:"Yearly Subscription", 
     amount:"2500.00"
   }, 
 
   {
     id:"1", 
-    date:"2024-05-13", 
+    date:(new Date('2022','03','23')), 
     title:"Monthly Subscription", 
     amount:"299.00"
   }, 
 
   {
     id:"2", 
-    date:"2024-07-09", 
+    date:(new Date('2021','09','20')), 
     title:"Weekly Subscription", 
     amount:"79.49"
   }
@@ -30,7 +30,7 @@ const INITIAL_SUBSCRIPTION=[
 ]
 const Main=()=>{
   const [subscription,SetSubscription]=useState(INITIAL_SUBSCRIPTION);
-  const  [FilterYear, SetFilterYear]=useState('All');
+  const  [FilterYear, SetFilterYear]=useState('2020');
   const AddSubscription=(data)=>
   {
     console.log("Data recive in Main.jsx");
@@ -44,18 +44,26 @@ const Main=()=>{
       console.log("Year recive in Main.jsx");
       console.log(FilterYear);
     }
+  const FilterSubscription=subscription.filter((item)=>{
+    return(
+      /*item.date.includes(FilterYear)*/
+      item.date.getFullYear().toString()===FilterYear
+    )
+  })
   return(
     <Container>
       <NewSubscription onAddSubbscription={AddSubscription}/>
       <Filter onFilterChange={FilterChangeHandler} selectedFilter={FilterYear}/>
-{subscription.map(subscription => (
+      
+{FilterSubscription.map(subscription => (
   <Subscription
     key={subscription.id}
     passedDate={subscription.date}
     passedTitle={subscription.title}
     passedAmount={subscription.amount}
   />
-))}
+))};
+      
     </Container>
   );
 }

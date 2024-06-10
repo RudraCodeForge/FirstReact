@@ -4,7 +4,7 @@ import { useState } from "react";
 const SForm = (props) => {
   const [form, setForm] = useState({
     UserTitle: "Subscription type:- ",
-    UserDate: "0000-00-00",
+    UserDate: "",
     UserAmount: "Enter Amount:-",
   });
 
@@ -31,7 +31,7 @@ const SForm = (props) => {
     event.preventDefault();
     const subscription={ 
       title:form.UserTitle,
-      date:form.UserDate, 
+      date:new Date(form.UserDate), 
       amount:form.UserAmount
     };
     props.onSave(subscription);
