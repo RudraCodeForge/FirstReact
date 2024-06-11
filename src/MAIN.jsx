@@ -1,6 +1,7 @@
 import Subscription from './subscription/Subscription';
 import Container from './Templates/Container';
 import {useState} from 'react';
+import './MAIN.css';
 
 import Filter from './subscription/Filter.jsx';
 import NewSubscription from './subscription/NewSubscription/NewSubscription.jsx'
@@ -30,39 +31,44 @@ const INITIAL_SUBSCRIPTION=[
 ]
 const Main=()=>{
   const [subscription,SetSubscription]=useState(INITIAL_SUBSCRIPTION);
-  const  [FilterYear, SetFilterYear]=useState('2020');
+  
+  const  [FilterYear, SetFilterYear]=useState('All');
+  
   const AddSubscription=(data)=>
   {
-    console.log("Data recive in Main.jsx");
-    console.log(data);
     SetSubscription(prevState=>{return [data,...subscription]})
   }
 
   const FilterChangeHandler=(Year) =>
-    {
-      SetFilterYear(Year);
-      console.log("Year recive in Main.jsx");
-      console.log(FilterYear);
-    }
-  const FilterSubscription=subscription.filter((item)=>{
+  {
+    SetFilterYear(Year);
+  }
+
+  console.log(FilterYear);
+
+  let FilterSubscription;
+
+  {FilterYear=="All"? FilterSubscription=subscription:FilterSubscription=subscription.filter((item)=>{
     return(
-      /*item.date.includes(FilterYear)*/
       item.date.getFullYear().toString()===FilterYear
     )
-  })
+  })};
+  
   return(
     <Container>
       <NewSubscription onAddSubbscription={AddSubscription}/>
       <Filter onFilterChange={FilterChangeHandler} selectedFilter={FilterYear}/>
-      
-{FilterSubscription.map(subscription => (
+
+      {FilterSubscription.length===0?<p className="Notice">NO SUBSCRIPTION FOUND </p>:
+        FilterSubscription.map(subscription => (
   <Subscription
     key={subscription.id}
     passedDate={subscription.date}
     passedTitle={subscription.title}
     passedAmount={subscription.amount}
   />
-))};
+))}
+      
       
     </Container>
   );
