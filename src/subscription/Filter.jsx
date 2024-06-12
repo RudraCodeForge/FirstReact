@@ -1,7 +1,6 @@
 import "./Filter.css";
 const Filter =(props)=>{
   const YearHandler=(events)=>{
-    console.log(events.target.value);
     props.onFilterChange(events.target.value);
   }
   return(
