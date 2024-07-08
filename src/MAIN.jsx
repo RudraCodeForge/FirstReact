@@ -6,6 +6,8 @@ import './MAIN.css';
 import Filter from './subscription/Filter.jsx';
 import NewSubscription from './subscription/NewSubscription/NewSubscription.jsx'
 
+import SubscriptionList from './subscription/SubscriptionList.jsx';
+
 const INITIAL_SUBSCRIPTION=[
   {
     id:"0", 
@@ -88,7 +90,8 @@ const Main=()=>{
   
   
   /*Try to apply if condition to show Subscription available or not Start here*/ 
-  let content=<p className="Notice">NO SUBSCRIPTION FOUND </p>;
+  
+  {/*let content=<p className="Notice">NO SUBSCRIPTION FOUND </p>;
   if(FilterSubscription.length!==0)
   {
     content=FilterSubscription.map(subscription => (
@@ -99,7 +102,8 @@ const Main=()=>{
     passedAmount={subscription.amount}
   />
 ))
-  };
+  }; */}
+  
   /*Try to apply if condition to show Subscription available or not ends here*/ 
   
   return(
@@ -107,7 +111,9 @@ const Main=()=>{
       <NewSubscription onAddSubbscription={AddSubscription}/>
       <Filter onFilterChange={FilterChangeHandler} selectedFilter={FilterYear}/>
 
-      {/*Show content of based on if conditions*/content}
+      {/*Show content of based on if conditions content*/}
+      
+      <SubscriptionList subscriptions={FilterSubscription} />
 
       
       {/*Try to apply && condition to show Subscription available or not Start here*/}
