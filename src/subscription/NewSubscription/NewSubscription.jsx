@@ -6,8 +6,11 @@ import SForm from './SForm.jsx';
 const NewSubscription=(props)=>{
   const [setForm, setNewForm]=useState(false);
   const onSaveHandler =(data)=>{
-    const SubscriptionData={...data,id:Math.random().toString()};
+    const SubscriptionData={
+      ...data,id:Math.random().toString()
+    };
     props.onAddSubbscription(SubscriptionData)
+    setNewForm(false)
   };
   const showForm=()=>{
     if(setForm==false){
