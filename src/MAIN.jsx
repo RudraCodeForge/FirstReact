@@ -1,5 +1,7 @@
-import Subscription from './subscription/Subscription';
+/*import Subscription from './subscription/Subscription';*/
+
 import Container from './Templates/Container';
+import SubscriptionChart from './subscription/SubscriptionChart.jsx';
 import {useState} from 'react';
 import './MAIN.css';
 
@@ -18,7 +20,7 @@ const INITIAL_SUBSCRIPTION=[
 
   {
     id:"1", 
-    date:(new Date('2022','03','23')), 
+    date:(new Date('2022','07','23')), 
     title:"Monthly Subscription", 
     amount:"299.00"
   }, 
@@ -109,8 +111,10 @@ const Main=()=>{
   return(
     <Container>
       <NewSubscription onAddSubbscription={AddSubscription}/>
+      
       <Filter onFilterChange={FilterChangeHandler} selectedFilter={FilterYear}/>
 
+      <SubscriptionChart FilteredSubscription={FilterSubscription} />
       {/*Show content of based on if conditions content*/}
       
       <SubscriptionList subscriptions={FilterSubscription} />
