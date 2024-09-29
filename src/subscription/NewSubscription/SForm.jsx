@@ -42,11 +42,12 @@ const SForm = (props) => {
       <div className="New_Sub_Controls">
         <div className="New_Sub_Control">
           <h2 className="Hadding">ADD NEW SUBSCRIPTION</h2>
+          
           <input
             type="text"
             value={form.UserTitle}
             onChange={TitleChange}
-            required
+            required 
           ></input>
           <br />
 
